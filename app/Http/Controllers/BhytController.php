@@ -94,6 +94,17 @@ class BhytController extends Controller
         $bhyt->hoTen = $request->hoTen;
 
         $bhyt->save();
+        return $bhyt;
+    }
+
+    public function setCompleted(Request $request, $id){
+        $bhyt = Bhyt::firstOrNew([
+            'maSoBhxh' => $id
+        ]);
+
+        $bhyt->completed = $request->completed;
+        $bhyt->save();
+        return $bhyt;
     }
 
     /**
