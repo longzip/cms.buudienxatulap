@@ -27,7 +27,9 @@ class CreateBhytTable extends Migration
             $table->string('ngay5Nam')->nullable();
             $table->string('soDienThoai')->nullable();
             $table->string('hoTen')->nullable();
+            $table->string('maHoGd')->nullable();
             $table->boolean('completed')->nullable()->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

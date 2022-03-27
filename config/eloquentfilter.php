@@ -34,6 +34,6 @@ return [
     | Set paginate limit
     |
     */
-    'paginate_limit' => env('PAGINATION_LIMIT_DEFAULT',50)
+    'paginate_limit' => env('PAGINATION_LIMIT_DEFAULT',5000)
 
 ];

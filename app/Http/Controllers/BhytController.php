@@ -92,6 +92,7 @@ class BhytController extends Controller
         $bhyt->ngay5Nam = $request->ngay5Nam;
         $bhyt->soDienThoai = $request->soDienThoai;
         $bhyt->hoTen = $request->hoTen;
+        $bhyt->maHoGd = $request->maHoGd;
 
         $bhyt->save();
         return $bhyt;
@@ -103,6 +104,16 @@ class BhytController extends Controller
         ]);
 
         $bhyt->completed = $request->completed;
+        $bhyt->save();
+        return $bhyt;
+    }
+
+    public function setDisabled(Request $request, $id){
+        $bhyt = Bhyt::firstOrNew([
+            'maSoBhxh' => $id
+        ]);
+
+        $bhyt->disabled = $request->disabled;
         $bhyt->save();
         return $bhyt;
     }

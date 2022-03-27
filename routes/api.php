@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::resource('bhyts', BhytController::class);
 
 Route::put('/bhyts/{bhyt}/completed', [BhytController::class, 'setCompleted']);
+Route::put('/bhyts/{bhyt}/disabled', [BhytController::class, 'setDisabled']);
