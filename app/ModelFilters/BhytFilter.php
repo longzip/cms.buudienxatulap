@@ -58,7 +58,7 @@ class BhytFilter extends ModelFilter
     {
         return $this->where(function($q) use ($maHoGd)
         {
-            return $q->where('maHoGd', $maHoGd)
+            return $q->where('maHoGd', $maHoGd);
         });
     }
 }
