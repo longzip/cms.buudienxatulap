@@ -29,7 +29,7 @@ class CreateBhytTable extends Migration
             $table->string('hoTen')->nullable();
             $table->string('maHoGd')->nullable();
             $table->boolean('completed')->nullable()->default(0);
-            $table->softDeletes();
+            $table->boolean('disabled')->nullable()->default(0);
             $table->timestamps();
         });
     }
