@@ -18,6 +18,10 @@ class BhytController extends Controller
         return Bhyt::filter($request->all())->orderByDesc('denNgayDt')->get();
     }
 
+    public function xoaHoGd(Request $request){
+        return Bhyt::filter($request->all())->delete();
+    }
+
     /**
      * Show the form for creating a new resource.
      *
