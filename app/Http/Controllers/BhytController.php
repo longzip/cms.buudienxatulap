@@ -14,8 +14,8 @@ class BhytController extends Controller
      */
     public function index(Request $request)
     {
-        //
-        return Bhyt::filter($request->all())->get();
+        //->orderByDesc('denNgayDt')
+        return Bhyt::filter($request->all())->orderByDesc('denNgayDt')->get();
     }
 
     /**
@@ -84,7 +84,7 @@ class BhytController extends Controller
         $bhyt->tuNgayDt = $request->tuNgayDt;
         $bhyt->denNgayDt = $request->denNgayDt;
         $bhyt->ngaySinhDt = $request->ngaySinhDt;
-        $bhyt->maKCB = $request->maKCB;
+        $bhyt->maKCB = $request->tenBenhVien;
         $bhyt->coTheUuTienCaoHon = $request->coTheUuTienCaoHon;
         $bhyt->gioiTinh = $request->gioiTinh;
         $bhyt->soTheBhyt = $request->soTheBhyt;
@@ -127,5 +127,15 @@ class BhytController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getAllMaHoGd(){
+        // return Bhyt::select('maHoGd')->distinct()->count();
+        return Bhyt::select('maHoGd')->distinct()->get();
+    }
+
+    public function getAllMaSoBhxh(){
+        // return Bhyt::select('maSoBhxh')->count();
+        return Bhyt::select('maSoBhxh')->get();
     }
 }

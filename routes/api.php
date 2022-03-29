@@ -23,3 +23,5 @@ Route::resource('bhyts', BhytController::class);
 
 Route::put('/bhyts/{bhyt}/completed', [BhytController::class, 'setCompleted']);
 Route::put('/bhyts/{bhyt}/disabled', [BhytController::class, 'setDisabled']);
+Route::get('/maHoGd', [BhytController::class, 'getAllMaHoGd']);
+Route::get('/maSoBhxhs', [BhytController::class, 'getAllMaSoBhxh']);
