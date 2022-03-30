@@ -122,6 +122,11 @@ class BhytController extends Controller
         return $bhyt;
     }
 
+    public function themDanhSach(Request $request){
+        $bhyt = Bhyt::insert($request->ds);
+        return $bhyt;
+    }
+
     /**
      * Remove the specified resource from storage.
      *

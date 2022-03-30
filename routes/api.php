@@ -26,3 +26,4 @@ Route::put('/bhyts/{bhyt}/disabled', [BhytController::class, 'setDisabled']);
 Route::get('/maHoGd', [BhytController::class, 'getAllMaHoGd']);
 Route::get('/maSoBhxhs', [BhytController::class, 'getAllMaSoBhxh']);
 Route::get('/xoaHoGd', [BhytController::class, 'xoaHoGd']);
+Route::put('/themds', [BhytController::class, 'themDanhSach']);
