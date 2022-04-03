@@ -61,4 +61,11 @@ class BhytFilter extends ModelFilter
             return $q->where('maHoGd', $maHoGd);
         });
     }
+
+    public function chuaDongBo($cot){
+        return $this->where(function($q) use ($cot)
+        {
+            return $q->whereNull($cot);
+        });
+    }
 }
