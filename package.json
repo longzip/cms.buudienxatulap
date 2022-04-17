@@ -5,6 +5,7 @@
         "development": "mix",
         "watch": "mix watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "push": "git add . && git commit -m fix && git push heroku",
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production"

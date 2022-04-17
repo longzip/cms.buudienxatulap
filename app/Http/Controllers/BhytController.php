@@ -14,8 +14,9 @@ class BhytController extends Controller
      */
     public function index(Request $request)
     {
+        //->orderBy('denNgayDt')
         //->orderByDesc('denNgayDt')
-        return Bhyt::filter($request->all())->orderBy('denNgayDt')->take(500)->get();
+        return Bhyt::filter($request->all())->orderByDesc('updated_at')->take(500)->get();
     }
 
     public function xoaHoGd(Request $request){
