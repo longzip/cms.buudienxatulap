@@ -53,6 +53,14 @@ class BhytFilter extends ModelFilter
             return $q->where('denNgayDt','>=', $homnay );
         });
     }
+    public function hetHan($thang)
+    {
+        return $this->where(function($q) use ($thang)
+        {
+            $homnay = new Carbon();
+            return $q->where('denNgayDt','<', $homnay );
+        });
+    }
 
     public function name($name)
     {
