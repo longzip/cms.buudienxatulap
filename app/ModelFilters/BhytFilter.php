@@ -44,6 +44,16 @@ class BhytFilter extends ModelFilter
         });
     }
 
+    //ngày hết hạn lớn hơn hôm nay
+    public function taiTuc($thang)
+    {
+        return $this->where(function($q) use ($thang)
+        {
+            $homnay = new Carbon();
+            return $q->where('denNgayDt','>=', $homnay );
+        });
+    }
+
     public function name($name)
     {
         return $this->where(function($q) use ($name)
