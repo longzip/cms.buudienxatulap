@@ -98,7 +98,7 @@ class BhytController extends Controller
         $bhyt->soDienThoai = $request->soDienThoai;
         $bhyt->hoTen = $request->hoTen;
         $bhyt->maHoGd = $request->maHoGd;
-        $bhyt->completed = $request->completed;
+        // $bhyt->completed = $request->completed;
 
         $bhyt->save();
         return $bhyt;
