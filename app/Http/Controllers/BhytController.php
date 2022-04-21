@@ -96,9 +96,10 @@ class BhytController extends Controller
         $bhyt->soCmnd = $request->soCmnd;
         $bhyt->ngay5Nam = $request->ngay5Nam;
         $bhyt->soDienThoai = $request->soDienThoai;
+        if(isset($request->hoTen))
         $bhyt->hoTen = $request->hoTen;
         $bhyt->maHoGd = $request->maHoGd;
-        if($request->completed)
+        if(isset($request->completed))
         $bhyt->completed = $request->completed;
 
         $bhyt->save();
