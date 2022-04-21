@@ -98,6 +98,7 @@ class BhytController extends Controller
         $bhyt->soDienThoai = $request->soDienThoai;
         if(isset($request->hoTen))
         $bhyt->hoTen = $request->hoTen;
+        if(isset($request->maHoGd))
         $bhyt->maHoGd = $request->maHoGd;
         if(isset($request->completed))
         $bhyt->completed = $request->completed;
