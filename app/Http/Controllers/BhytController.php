@@ -123,6 +123,7 @@ class BhytController extends Controller
         ]);
 
         $bhyt->tongTien = $request->tongTien;
+        $bhyt->disabled = true;
         $bhyt->save();
         return $bhyt;
     }
