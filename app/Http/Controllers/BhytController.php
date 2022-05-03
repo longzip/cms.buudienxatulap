@@ -117,6 +117,16 @@ class BhytController extends Controller
         return $bhyt;
     }
 
+    public function setTongTien(Request $request, $id){
+        $bhyt = Bhyt::firstOrNew([
+            'maSoBhxh' => $id
+        ]);
+
+        $bhyt->tongTien = $request->tongTien;
+        $bhyt->save();
+        return $bhyt;
+    }
+
     public function setDisabled(Request $request, $id){
         $bhyt = Bhyt::firstOrNew([
             'maSoBhxh' => $id
