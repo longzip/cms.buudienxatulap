@@ -121,10 +121,12 @@ class BhytController extends Controller
         $bhyt = Bhyt::firstOrNew([
             'maSoBhxh' => $id
         ]);
-
-        $bhyt->tongTien = $request->tongTien;
-        $bhyt->disabled = true;
-        $bhyt->save();
+        $bhyt->update($request);
+        // $bhyt->tongTien = $request->tongTien;
+        // $bhyt->ngayLap = $request->ngayLap;
+        // $bhyt->disabled = $request->disabled;
+        // $bhyt->completed = $request->completed;
+        // $bhyt->save();
         return $bhyt;
     }
 
