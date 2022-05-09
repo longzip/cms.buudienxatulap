@@ -104,9 +104,6 @@ class BhytController extends Controller
         $bhyt->hoTen = $request->hoTen;
         if(isset($request->maHoGd))
         $bhyt->maHoGd = $request->maHoGd;
-        // if(isset($request->completed))
-        // $bhyt->completed = $request->completed;
-
         $bhyt->save();
         return $bhyt;
     }
