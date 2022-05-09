@@ -69,6 +69,7 @@ class BhytFilter extends ModelFilter
             return $q->where('soTheBhyt', 'LIKE', "%$name%")
                 ->orWhere('soDienThoai', 'LIKE', "%$name%")
                 ->orWhere('hoTen', 'LIKE', "%$name%")
+                ->orWhere('soCmnd', 'LIKE', "%$name%")
                 ->orWhere('ghiChu', 'LIKE', "%$name%");
         });
     }
