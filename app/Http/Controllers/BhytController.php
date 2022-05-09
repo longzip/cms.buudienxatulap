@@ -105,6 +105,7 @@ class BhytController extends Controller
         if(isset($request->maHoGd))
         $bhyt->maHoGd = $request->maHoGd;
         $bhyt->save();
+        
         return $bhyt;
     }
 
