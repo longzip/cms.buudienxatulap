@@ -91,29 +91,37 @@
     <div>
         <table style="border-collapse: collapse; width: 100%;" border="1">
         <tbody>
-        <tr>
-        <td style="width: 9.21053%; text-align: center;">STT</td>
-        <td style="width: 40.7895%; text-align: center;">NỘI DUNG</td>
-        <td style="width: 25%; text-align: center;">SỐ TIỀN</td>
-        <td style="width: 25%; text-align: center;">GHI CH&Uacute;</td>
-        </tr>
-        <tr>
+          <tr>
+            <td style="width: 9.21053%; text-align: center;">STT</td>
+            <td style="width: 40.7895%; text-align: center;">NỘI DUNG</td>
+            <td style="width: 25%; text-align: center;">SỐ TIỀN</td>
+            <td style="width: 25%; text-align: center;">GHI CH&Uacute;</td>
+          </tr>
+          <?php if (isset($tienDien)) : ?>
+          <tr>
             <td style="width: 9.21053%; text-align: center;">1</td>
-            <td style="width: 40.7895%;">Nộp tiền BHYT</td>
-            <td style="width: 25%; text-align: center;">{{ number_format($tienBHYT, 0, ',', '.') }}</td>
+            <td style="width: 40.7895%;">Nộp tiền Điện</td>
+            <td style="width: 25%; text-align: center;">{{ number_format($tienDien, 0, ',', '.') }}</td>
             <td style="width: 25%;">&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="width: 9.21053%; text-align: center;">1</td>
-            <td style="width: 40.7895%;">Nộp tiền BHXH</td>
-            <td style="width: 25%; text-align: center;">{{ number_format($tienBHXH, 0, ',', '.') }}</td>
+          </tr>
+          <?php endif; ?>
+          <tr>
+              <td style="width: 9.21053%; text-align: center;">1</td>
+              <td style="width: 40.7895%;">Nộp tiền BHYT</td>
+              <td style="width: 25%; text-align: center;">{{ number_format($tienBHYT, 0, ',', '.') }}</td>
+              <td style="width: 25%;">&nbsp;</td>
+          </tr>
+          <tr>
+              <td style="width: 9.21053%; text-align: center;">1</td>
+              <td style="width: 40.7895%;">Nộp tiền BHXH</td>
+              <td style="width: 25%; text-align: center;">{{ number_format($tienBHXH, 0, ',', '.') }}</td>
+              <td style="width: 25%;">&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="width: 9.21053%; text-align: center;" colspan="2">Tổng tiền</td>
+            <td style="width: 25%; text-align: center;">{{ number_format($tienBHYT+$tienBHXH+$tienDien, 0, ',', '.') }}</td>
             <td style="width: 25%;">&nbsp;</td>
-        </tr>
-        <tr>
-        <td style="width: 9.21053%; text-align: center;" colspan="2">Tổng tiền</td>
-        <td style="width: 25%; text-align: center;">{{ number_format($tienBHYT+$tienBHXH, 0, ',', '.') }}</td>
-        <td style="width: 25%;">&nbsp;</td>
-        </tr>
+          </tr>
         </tbody>
         </table>
         <p>Bằng chữ: {{ convert_number_to_words($tienBHYT) }} đồng!</p>
@@ -216,7 +224,7 @@
 <td style="width: 11.8909%; text-align: right;"><strong>&nbsp;</strong></td>
 <td style="width: 30.4093%; text-align: right; height: 18px;"><strong>&nbsp;</strong></td>
 <td style="width: 17.7388%; text-align: center; height: 18px;">chuyển khoản</td>
-<td style="width: 23.2944%; text-align: center; height: 18px;">{{ number_format(($tienBHYT + $tienBHXH) - (500000*$bangKe['t500']+200000*$bangKe['t200']+100000*$bangKe['t100']+50000*$bangKe['t50']+20000*$bangKe['t20']+10000*$bangKe['t10']+5000*$bangKe['t5']+2000*$bangKe['t2']+1000*$bangKe['t1']), 0, ',', '.') }}</td>
+<td style="width: 23.2944%; text-align: center; height: 18px;">{{ number_format(($tienBHYT + $tienBHXH + $tienDien) - (500000*$bangKe['t500']+200000*$bangKe['t200']+100000*$bangKe['t100']+50000*$bangKe['t50']+20000*$bangKe['t20']+10000*$bangKe['t10']+5000*$bangKe['t5']+2000*$bangKe['t2']+1000*$bangKe['t1']), 0, ',', '.') }}</td>
 <td style="width: 16.6667%; text-align: center;">&nbsp;</td>
 </tr>
 </tbody>
