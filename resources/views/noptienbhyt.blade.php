@@ -215,8 +215,8 @@
 <tr style="height: 18px;">
 <td style="width: 11.8909%; text-align: right;"><strong>&nbsp;</strong></td>
 <td style="width: 30.4093%; text-align: right; height: 18px;"><strong>&nbsp;</strong></td>
-<td style="width: 17.7388%; text-align: center; height: 18px;">ck</td>
-<td style="width: 23.2944%; text-align: center; height: 18px;">{{ number_format($tienBHYT + $tienBHXH - 500000*$bangKe['t500']+200000*$bangKe['t200']+100000*$bangKe['t100']+50000*$bangKe['t50']+20000*$bangKe['t20']+10000*$bangKe['t10']+5000*$bangKe['t5']+2000*$bangKe['t2']+1000*$bangKe['t1'], 0, ',', '.') }}</td>
+<td style="width: 17.7388%; text-align: center; height: 18px;">chuyển khoản</td>
+<td style="width: 23.2944%; text-align: center; height: 18px;">{{ number_format(($tienBHYT + $tienBHXH) - (500000*$bangKe['t500']+200000*$bangKe['t200']+100000*$bangKe['t100']+50000*$bangKe['t50']+20000*$bangKe['t20']+10000*$bangKe['t10']+5000*$bangKe['t5']+2000*$bangKe['t2']+1000*$bangKe['t1']), 0, ',', '.') }}</td>
 <td style="width: 16.6667%; text-align: center;">&nbsp;</td>
 </tr>
 </tbody>
