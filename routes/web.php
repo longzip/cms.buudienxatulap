@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BhytController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,5 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/nop-bhyt/{id}/pdf', [BhytController::class, 'inMauNopTienBHYT']);
+Route::get('/nop-bhyt/{id}', [BhytController::class, 'xemMauNopTienBHYT']);
 
 // Route::resource('bhyt', 'BhytController');
