@@ -171,17 +171,22 @@ class BhytController extends Controller
     }
 
     public function inMauNopTienBHYT(Request $request, $id){
-        $pdf = PDF::loadView('noptienbhyt', ['tienBHYT' => $request->tienBHYT, 'tienBHXH' => $request->tienBHXH, 'bangKe' => [
-            't500' => $request->t500,
-            't200' => $request->t200,
-            't100' => $request->t100,
-            't50' => $request->t50,
-            't20' => $request->t20,
-            't10' => $request->t10,
-            't5' => $request->t5,
-            't2' => $request->t2,
-            't1' => $request->t1
-        ]]);
+        $pdf = PDF::loadView('noptienbhyt', [
+            'tienBHYT' => $request->tienBHYT,
+            'tienBHXH' => $request->tienBHXH,
+            'tienDien' => $request->tienDien,
+            'bangKe' => [
+                't500' => $request->t500,
+                't200' => $request->t200,
+                't100' => $request->t100,
+                't50' => $request->t50,
+                't20' => $request->t20,
+                't10' => $request->t10,
+                't5' => $request->t5,
+                't2' => $request->t2,
+                't1' => $request->t1
+                ]
+            ]);
         return $pdf->stream('Tu-Lap-Nop-Tien-BHYT.pdf');
     }
     public function xemMauNopTienBHYT(Request $request, $id){

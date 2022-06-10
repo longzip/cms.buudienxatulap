@@ -89,6 +89,7 @@
         <br>Đơn vị: VHX Tự Lập - Bưu Điện huyện Mê Linh</p>
     </div>
     <div>
+        <?php $stt = 0; ?>
         <table style="border-collapse: collapse; width: 100%;" border="1">
         <tbody>
           <tr>
@@ -99,24 +100,28 @@
           </tr>
           <?php if (isset($tienDien)) : ?>
           <tr>
-            <td style="width: 9.21053%; text-align: center;">1</td>
+            <td style="width: 9.21053%; text-align: center;">{{++ $stt}}</td>
             <td style="width: 40.7895%;">Nộp tiền Điện</td>
             <td style="width: 25%; text-align: center;">{{ number_format($tienDien, 0, ',', '.') }}</td>
             <td style="width: 25%;">&nbsp;</td>
           </tr>
           <?php endif; ?>
+          <?php if (isset($tienBHYT)) : ?>
           <tr>
-              <td style="width: 9.21053%; text-align: center;">1</td>
+              <td style="width: 9.21053%; text-align: center;">{{++ $stt}}</td>
               <td style="width: 40.7895%;">Nộp tiền BHYT</td>
               <td style="width: 25%; text-align: center;">{{ number_format($tienBHYT, 0, ',', '.') }}</td>
               <td style="width: 25%;">&nbsp;</td>
           </tr>
+          <?php endif; ?>
+          <?php if (isset($tienBHXH)) : ?>
           <tr>
-              <td style="width: 9.21053%; text-align: center;">1</td>
+              <td style="width: 9.21053%; text-align: center;">{{++ $stt}}</td>
               <td style="width: 40.7895%;">Nộp tiền BHXH</td>
               <td style="width: 25%; text-align: center;">{{ number_format($tienBHXH, 0, ',', '.') }}</td>
               <td style="width: 25%;">&nbsp;</td>
           </tr>
+          <?php endif; ?>
           <tr>
             <td style="width: 9.21053%; text-align: center;" colspan="2">Tổng tiền</td>
             <td style="width: 25%; text-align: center;">{{ number_format($tienBHYT+$tienBHXH+$tienDien, 0, ',', '.') }}</td>
@@ -147,84 +152,84 @@
 <td style="width: 11.8909%; text-align: center;">TT</td>
 <td style="width: 30.4093%; text-align: center; height: 18px;">Loại Tiền</td>
 <td style="width: 17.7388%; text-align: center; height: 18px;">Số Tờ</td>
-<td style="width: 23.2944%; text-align: center; height: 18px;">Th&agrave;nh Tiền</td>
+<td style="width: 23.2944%; text-align: right; height: 18px; padding-right: 20px;">Th&agrave;nh Tiền</td>
 <td style="width: 16.6667%; text-align: center;">Ghi Ch&uacute;</td>
 </tr>
 <tr style="height: 18px;">
 <td style="width: 11.8909%; text-align: center;">1</td>
 <td style="width: 30.4093%; text-align: right; height: 18px; padding-right: 70px;">500.000</td>
 <td style="width: 17.7388%; text-align: center; height: 18px;">{{ $bangKe['t500'] }}</td>
-<td style="width: 23.2944%; text-align: center; height: 18px;">{{ number_format(500000*$bangKe['t500'], 0, ',', '.') }}</td>
+<td style="width: 23.2944%; text-align: right; height: 18px; padding-right: 20px;">{{ number_format(500000*$bangKe['t500'], 0, ',', '.') }}</td>
 <td style="width: 16.6667%; text-align: center;">&nbsp;</td>
 </tr>
 <tr style="height: 18px;">
 <td style="width: 11.8909%; text-align: center;">2</td>
 <td style="width: 30.4093%; text-align: right; height: 18px; padding-right: 70px;">200.000</td>
 <td style="width: 17.7388%; text-align: center; height: 18px;">{{ $bangKe['t200'] }}</td>
-<td style="width: 23.2944%; text-align: center; height: 18px;">{{ number_format(200000*$bangKe['t200'], 0, ',', '.') }}</td>
+<td style="width: 23.2944%; text-align: right; height: 18px; padding-right: 20px;">{{ number_format(200000*$bangKe['t200'], 0, ',', '.') }}</td>
 <td style="width: 16.6667%; text-align: center;">&nbsp;</td>
 </tr>
 <tr style="height: 18px;">
 <td style="width: 11.8909%; text-align: center;">3</td>
 <td style="width: 30.4093%; text-align: right; height: 18px; padding-right: 70px;">100.000</td>
 <td style="width: 17.7388%; text-align: center; height: 18px;">{{ $bangKe['t100'] }}</td>
-<td style="width: 23.2944%; text-align: center; height: 18px;">{{ number_format(100000*$bangKe['t100'], 0, ',', '.') }}</td>
+<td style="width: 23.2944%; text-align: right; height: 18px; padding-right: 20px;">{{ number_format(100000*$bangKe['t100'], 0, ',', '.') }}</td>
 <td style="width: 16.6667%; text-align: center;">&nbsp;</td>
 </tr>
 <tr style="height: 18px;">
 <td style="width: 11.8909%; text-align: center;">4</td>
 <td style="width: 30.4093%; text-align: right; height: 18px; padding-right: 70px;">50.000</td>
 <td style="width: 17.7388%; text-align: center; height: 18px;">{{ $bangKe['t50'] }}</td>
-<td style="width: 23.2944%; text-align: center; height: 18px;">{{ number_format(50000*$bangKe['t50'], 0, ',', '.') }}</td>
+<td style="width: 23.2944%; text-align: right; height: 18px; padding-right: 20px;">{{ number_format(50000*$bangKe['t50'], 0, ',', '.') }}</td>
 <td style="width: 16.6667%; text-align: center;">&nbsp;</td>
 </tr>
 <tr style="height: 18px;">
 <td style="width: 11.8909%; text-align: center;">5</td>
 <td style="width: 30.4093%; text-align: right; height: 18px; padding-right: 70px;">20.000</td>
 <td style="width: 17.7388%; text-align: center; height: 18px;">{{ $bangKe['t20'] }}</td>
-<td style="width: 23.2944%; text-align: center; height: 18px;">{{ number_format(20000*$bangKe['t20'], 0, ',', '.') }}</td>
+<td style="width: 23.2944%; text-align: right; height: 18px; padding-right: 20px;">{{ number_format(20000*$bangKe['t20'], 0, ',', '.') }}</td>
 <td style="width: 16.6667%; text-align: center;">&nbsp;</td>
 </tr>
 <tr style="height: 18px;">
 <td style="width: 11.8909%; text-align: center;">6</td>
 <td style="width: 30.4093%; text-align: right; height: 18px; padding-right: 70px;">10.000</td>
 <td style="width: 17.7388%; text-align: center; height: 18px;">{{ $bangKe['t10'] }}</td>
-<td style="width: 23.2944%; text-align: center; height: 18px;">{{ number_format(10000*$bangKe['t10'], 0, ',', '.') }}</td>
+<td style="width: 23.2944%; text-align: right; height: 18px; padding-right: 20px;">{{ number_format(10000*$bangKe['t10'], 0, ',', '.') }}</td>
 <td style="width: 16.6667%; text-align: center;">&nbsp;</td>
 </tr>
 <tr style="height: 18px;">
 <td style="width: 11.8909%; text-align: center;">7</td>
 <td style="width: 30.4093%; text-align: right; height: 18px; padding-right: 70px;">5.000</td>
 <td style="width: 17.7388%; text-align: center; height: 18px;">{{ $bangKe['t5'] }}</td>
-<td style="width: 23.2944%; text-align: center; height: 18px;">{{ number_format(5000*$bangKe['t5'], 0, ',', '.') }}</td>
+<td style="width: 23.2944%; text-align: right; height: 18px; padding-right: 20px;">{{ number_format(5000*$bangKe['t5'], 0, ',', '.') }}</td>
 <td style="width: 16.6667%; text-align: center;">&nbsp;</td>
 </tr>
 <tr style="height: 18px;">
 <td style="width: 11.8909%; text-align: center;">8</td>
 <td style="width: 30.4093%; text-align: right; height: 18px; padding-right: 70px;">2.000</td>
 <td style="width: 17.7388%; text-align: center; height: 18px;">{{ $bangKe['t2'] }}</td>
-<td style="width: 23.2944%; text-align: center; height: 18px;">{{ number_format(2000*$bangKe['t2'], 0, ',', '.') }}</td>
+<td style="width: 23.2944%; text-align: right; height: 18px; padding-right: 20px;">{{ number_format(2000*$bangKe['t2'], 0, ',', '.') }}</td>
 <td style="width: 16.6667%; text-align: center;">&nbsp;</td>
 </tr>
 <tr style="height: 18px;">
 <td style="width: 11.8909%; text-align: center;">9</td>
 <td style="width: 30.4093%; text-align: right; height: 18px; padding-right: 70px;">1.000</td>
 <td style="width: 17.7388%; text-align: center; height: 18px;">{{ $bangKe['t1'] }}</td>
-<td style="width: 23.2944%; text-align: center; height: 18px;">{{ number_format(1000*$bangKe['t1'], 0, ',', '.') }}</td>
+<td style="width: 23.2944%; text-align: right; height: 18px; padding-right: 20px;">{{ number_format(1000*$bangKe['t1'], 0, ',', '.') }}</td>
 <td style="width: 16.6667%; text-align: center;">&nbsp;</td>
 </tr>
 <tr style="height: 18px;">
 <td style="width: 11.8909%; text-align: center;"><strong>&nbsp;</strong></td>
 <td style="width: 30.4093%; text-align: right; height: 18px;"><strong>Tổng cộng</strong></td>
 <td style="width: 17.7388%; text-align: center; height: 18px;">&nbsp;</td>
-<td style="width: 23.2944%; text-align: center; height: 18px;">{{ number_format(500000*$bangKe['t500']+200000*$bangKe['t200']+100000*$bangKe['t100']+50000*$bangKe['t50']+20000*$bangKe['t20']+10000*$bangKe['t10']+5000*$bangKe['t5']+2000*$bangKe['t2']+1000*$bangKe['t1'], 0, ',', '.') }}</td>
+<td style="width: 23.2944%; text-align: right; height: 18px; padding-right: 20px;">{{ number_format(500000*$bangKe['t500']+200000*$bangKe['t200']+100000*$bangKe['t100']+50000*$bangKe['t50']+20000*$bangKe['t20']+10000*$bangKe['t10']+5000*$bangKe['t5']+2000*$bangKe['t2']+1000*$bangKe['t1'], 0, ',', '.') }}</td>
 <td style="width: 16.6667%; text-align: center;">&nbsp;</td>
 </tr>
 <tr style="height: 18px;">
 <td style="width: 11.8909%; text-align: right;"><strong>&nbsp;</strong></td>
 <td style="width: 30.4093%; text-align: right; height: 18px;"><strong>&nbsp;</strong></td>
 <td style="width: 17.7388%; text-align: center; height: 18px;">chuyển khoản</td>
-<td style="width: 23.2944%; text-align: center; height: 18px;">{{ number_format(($tienBHYT + $tienBHXH + $tienDien) - (500000*$bangKe['t500']+200000*$bangKe['t200']+100000*$bangKe['t100']+50000*$bangKe['t50']+20000*$bangKe['t20']+10000*$bangKe['t10']+5000*$bangKe['t5']+2000*$bangKe['t2']+1000*$bangKe['t1']), 0, ',', '.') }}</td>
+<td style="width: 23.2944%; text-align: right; height: 18px; padding-right: 20px;">{{ number_format(($tienBHYT + $tienBHXH + $tienDien) - (500000*$bangKe['t500']+200000*$bangKe['t200']+100000*$bangKe['t100']+50000*$bangKe['t50']+20000*$bangKe['t20']+10000*$bangKe['t10']+5000*$bangKe['t5']+2000*$bangKe['t2']+1000*$bangKe['t1']), 0, ',', '.') }}</td>
 <td style="width: 16.6667%; text-align: center;">&nbsp;</td>
 </tr>
 </tbody>
