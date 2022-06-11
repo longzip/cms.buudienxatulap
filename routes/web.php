@@ -20,5 +20,6 @@ Route::get('/', function () {
 
 Route::get('/nop-bhyt/{id}/pdf', [BhytController::class, 'inMauNopTienBHYT']);
 Route::get('/nop-bhyt/{id}', [BhytController::class, 'xemMauNopTienBHYT']);
+Route::get('/thanh-vien-ho-gia-dinh/{id}/pdf', [BhytController::class, 'inPhuLucThanhVienHoGiaDinh']);
 
 // Route::resource('bhyt', 'BhytController');

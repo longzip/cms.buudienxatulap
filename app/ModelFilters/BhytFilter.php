@@ -25,6 +25,14 @@ class BhytFilter extends ModelFilter
         });
     }
 
+    public function maSoBhxhs($str)
+    {
+        return $this->where(function($q) use ($str)
+        {
+            return $q->whereIn('maSoBhxh', explode(",",$str));
+        });
+    }
+
     public function disabled($disabled)
     {
         return $this->where(function($q) use ($disabled)

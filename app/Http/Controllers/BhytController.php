@@ -189,6 +189,15 @@ class BhytController extends Controller
             ]);
         return $pdf->stream('Tu-Lap-Nop-Tien-BHYT.pdf');
     }
+    public function inPhuLucThanhVienHoGiaDinh(Request $request, $id){
+        // return $request->maSoBhxhs;
+        $bhyts = Bhyt::filter($request->all())->orderBy('maSoBhxh')->get();
+        $pdf = PDF::loadView('phuLucThanhVienHoGiaDinh', [
+            'bhyts' => $bhyts,
+        ]);
+        $pdf->setPaper('A4', 'landscape');
+        return $pdf->stream('To-Khai-BHYT.pdf');
+    }
     public function xemMauNopTienBHYT(Request $request, $id){
         return view('noptienbhyt', ['tienBHYT' => 1367820, 'tienBHXH' => 297000]);
     }
