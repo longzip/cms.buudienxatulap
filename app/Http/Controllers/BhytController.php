@@ -43,7 +43,31 @@ class BhytController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $bhyt = Bhyt::firstOrNew([
+            'maSoBhxh' => $request->maSoBhxh
+        ]);
+
+        $bhyt->tuNgayDt = $request->tuNgayDt;
+        $bhyt->denNgayDt = $request->denNgayDt;
+        if(isset($request->ngaySinhDt))
+        $bhyt->ngaySinhDt = $request->ngaySinhDt;
+        $bhyt->maKCB = $request->tenBenhVien;
+        $bhyt->coTheUuTienCaoHon = $request->coTheUuTienCaoHon;
+        if(isset($request->gioiTinh))
+        $bhyt->gioiTinh = $request->gioiTinh;
+        $bhyt->soTheBhyt = $request->soTheBhyt;
+        $bhyt->soCmnd = $request->soCmnd;
+        $bhyt->mqhChuHo = $request->mqhChuHo;
+        $bhyt->ngay5Nam = $request->ngay5Nam;
+        if(isset($request->soDienThoai))
+        $bhyt->soDienThoai = $request->soDienThoai;
+        if(isset($request->hoTen))
+        $bhyt->hoTen = $request->hoTen;
+        if(isset($request->maHoGd))
+        $bhyt->maHoGd = $request->maHoGd;
+        $bhyt->save();
+        
+        return $bhyt;
     }
 
     /**
