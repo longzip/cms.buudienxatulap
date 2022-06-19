@@ -44,7 +44,7 @@ class BhytController extends Controller
     public function store(Request $request)
     {
         $bhyt = Bhyt::firstOrNew([
-            'maSoBhxh' => $request->maSoBhxh
+            'maSoBhxh' => $request->soSoBhxh
         ]);
 
         $bhyt->tuNgayDt = $request->tuNgayDt;
