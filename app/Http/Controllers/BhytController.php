@@ -168,7 +168,7 @@ class BhytController extends Controller
         return $bhyt;
     }
 
-    public function setAuth(Request $request, $id){
+    public function setAuth(Request $request){
         $bhyt = Bhyt::find(1);
 
         $bhyt->ghiChu = $request->ghiChu;
