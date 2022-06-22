@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bhyt;
+use App\Models\User;
 use PDF;
 
 
@@ -168,16 +169,27 @@ class BhytController extends Controller
         return $bhyt;
     }
 
-    public function setAuth(Request $request){
-        $bhyt = Bhyt::find(1);
+    public function setGhiChu(Request $request, $id){
+        $bhyt = Bhyt::firstOrNew([
+            'maSoBhxh' => $id
+        ]);
 
         $bhyt->ghiChu = $request->ghiChu;
         $bhyt->save();
         return $bhyt;
     }
+
+    public function setAuth(Request $request){
+        $user = User::find(1);
+
+        $user->ghiChu = $request->ghiChu;
+        $user->save();
+        return $user->ghiChu;
+    }
+
     public function getAuth(){
-        $bhyt = Bhyt::find(1);
-        return $bhyt->ghiChu;
+        $user = User::find(1);
+        return $user->ghiChu;
     }
 
     public function themDanhSach(Request $request){
@@ -244,4 +256,6 @@ class BhytController extends Controller
     public function xemMauNopTienBHYT(Request $request, $id){
         return view('noptienbhyt', ['tienBHYT' => 1367820, 'tienBHXH' => 297000]);
     }
+
+
 }

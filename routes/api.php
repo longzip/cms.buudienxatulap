@@ -29,5 +29,7 @@ Route::get('/maSoBhxhs', [BhytController::class, 'getAllMaSoBhxh']);
 Route::get('/contacts', [BhytController::class, 'getAllContacts']);
 Route::get('/xoaHoGd', [BhytController::class, 'xoaHoGd']);
 Route::put('/themds', [BhytController::class, 'themDanhSach']);
-Route::put('/bhyt-auth', [BhytController::class, 'setAuth']);
-Route::get('/bhyt-auth', [BhytController::class, 'getAuth']);
+Route::put('/bhyts/{bhyt}/ghi-chu', [BhytController::class, 'setGhiChu']);
+
+Route::put('/user-ghi-chu', [BhytController::class, 'setAuth']);
+Route::get('/user-ghi-chu', [BhytController::class, 'getAuth']);

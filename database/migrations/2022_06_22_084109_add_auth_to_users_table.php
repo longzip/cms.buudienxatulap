@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSobienlaiToBhytsTable extends Migration
+class AddAuthToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddSobienlaiToBhytsTable extends Migration
      */
     public function up()
     {
-        Schema::table('bhyts', function (Blueprint $table) {
-            $table->string('soBienLai')->nullable();
+        Schema::table('users', function (Blueprint $table) {
+            $table->text('ghiChu')->nullable();
         });
     }
 
@@ -25,7 +25,7 @@ class AddSobienlaiToBhytsTable extends Migration
      */
     public function down()
     {
-        Schema::table('bhyts', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }
