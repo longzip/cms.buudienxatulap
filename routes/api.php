@@ -26,5 +26,8 @@ Route::put('/bhyts/{bhyt}/disabled', [BhytController::class, 'setDisabled']);
 Route::put('/bhyts/{bhyt}/tong-tien', [BhytController::class, 'setTongTien']);
 Route::get('/maHoGd', [BhytController::class, 'getAllMaHoGd']);
 Route::get('/maSoBhxhs', [BhytController::class, 'getAllMaSoBhxh']);
+Route::get('/contacts', [BhytController::class, 'getAllContacts']);
 Route::get('/xoaHoGd', [BhytController::class, 'xoaHoGd']);
 Route::put('/themds', [BhytController::class, 'themDanhSach']);
+Route::put('/bhyt-auth', [BhytController::class, 'setAuth']);
+Route::get('/bhyt-auth', [BhytController::class, 'getAuth']);

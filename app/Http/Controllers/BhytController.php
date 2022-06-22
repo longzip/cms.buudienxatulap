@@ -168,6 +168,18 @@ class BhytController extends Controller
         return $bhyt;
     }
 
+    public function setAuth(Request $request, $id){
+        $bhyt = Bhyt::find(1);
+
+        $bhyt->ghiChu = $request->ghiChu;
+        $bhyt->save();
+        return $bhyt;
+    }
+    public function getAuth(){
+        $bhyt = Bhyt::find(1);
+        return $bhyt;
+    }
+
     public function themDanhSach(Request $request){
         $bhyt = Bhyt::insert($request->ds);
         return $bhyt;
@@ -191,6 +203,13 @@ class BhytController extends Controller
 
     public function getAllMaSoBhxh(){
         // return Bhyt::select('maSoBhxh')->count();
+        // return Bhyt::select('hoTen','ngaySinhDt','soDienThoai')->whereNotNull('soDienThoai')->get();
+        return Bhyt::select('maSoBhxh')->get();
+    }
+
+    public function getAllContacts(){
+        // return Bhyt::select('maSoBhxh')->count();
+        return Bhyt::select('hoTen','ngaySinhDt','soDienThoai')->whereNotNull('soDienThoai')->get();
         return Bhyt::select('maSoBhxh')->get();
     }
 
