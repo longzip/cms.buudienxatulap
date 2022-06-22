@@ -177,7 +177,7 @@ class BhytController extends Controller
     }
     public function getAuth(){
         $bhyt = Bhyt::find(1);
-        return $bhyt;
+        return $bhyt->ghiChu;
     }
 
     public function themDanhSach(Request $request){
