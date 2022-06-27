@@ -126,7 +126,8 @@
               &nbsp; {{ $bhyt->soCmnd }}
               @endif
             </td>
-            <td style="width: 1.8797%; text-align: right;">{{ number_format($bhyt->tongTien, 0, ',', '.') }}</td>
+            <td style="width: 1.8797%; text-align: right;"></td>
+            <!-- {{ number_format($bhyt->tongTien, 0, ',', '.') }} -->
           </tr>
         @endforeach
         </tbody>
