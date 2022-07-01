@@ -126,8 +126,11 @@
               &nbsp; {{ $bhyt->soCmnd }}
               @endif
             </td>
-            <td style="width: 1.8797%; text-align: right;"></td>
-            <!-- {{ number_format($bhyt->tongTien, 0, ',', '.') }} -->
+            <td style="width: 1.8797%; text-align: right;">
+              @if (substr($bhyt->ngayLap,0,4) === '2022' )
+              {{ number_format($bhyt->tongTien, 0, ',', '.') }}
+              @endif
+            </td>
           </tr>
         @endforeach
         </tbody>
@@ -140,7 +143,7 @@
 <td style="width: 50%;">&nbsp;</td>
 <td style="width: 50%;">
 <div style="margin-top: 50px;">
-<div style="text-align: center;">Tự Lập, ng&agrave;y {{date('d')}} th&aacute;ng {{date('m')}} năm {{date('Y')}}</div>
+<div style="text-align: center;">&hellip;&hellip;&hellip;&hellip;, ng&agrave;y {{date('d')}} th&aacute;ng {{date('m')}} năm {{date('Y')}}</div>
 <div style="text-align: center;">Người k&ecirc; khai</div>
 </div>
 </td>
