@@ -48,7 +48,7 @@ class BhytFilter extends ModelFilter
         return $this->where(function($q) use ($thang)
         {
             $homnay = new Carbon();
-            return $q->where('denNgayDt','<=', $homnay->addMonthsNoOverflow(6) );
+            return $q->where('denNgayDt','<=', $homnay->addMonthsNoOverflow(2) );
         });
     }
 
