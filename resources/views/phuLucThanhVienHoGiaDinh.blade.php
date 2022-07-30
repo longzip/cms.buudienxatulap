@@ -56,7 +56,7 @@
 <body>
   <div class="container">
     <div>
-        <h4 style="text-align: center; margin-top: 50px; font-size: 18px;">Phụ lục Thành viên hộ gia đình</h4>
+        <h4 style="text-align: center; margin-top: 100px; font-size: 18px;">Phụ lục Thành viên hộ gia đình</h4>
         <p style="text-align: center; margin: 5px auto;">
         <em>(Áp dụng đối với: Người tham gia tra cứu không thấy mã số BHXH; Người tham gia BHYT theo hộ gia đình để giảm trừ mức đóng;
             Trẻ em dưới 6 tuổi thực hiện cấp thẻ BHYT liên thông dữ liệu với Bộ Tư pháp)</em>
